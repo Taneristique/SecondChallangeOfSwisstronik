@@ -16,3 +16,13 @@ Prerequisities
 2.Node.js and NPM must be already installed for running this project.In case it is not installed,here is how to install : https://docs.npmjs.com/downloading-and-installing-node-js-and-npm
 3.The project won't work if no infura api key provided, therefore user must be already registered and created a project. Here is infura documentation in case user hasn't registered yet : https://docs.infura.io/getting-started
 
+Installation
+1.Clone this repo by running following script on your terminal:
+git clone "https://github.com/Taneristique/SecondChallangeOfSwisstronik.git"
+2.Go to repo on your computer and install dependencies by running following script on your terminal:
+npm install 
+3.Rename example.env as .env
+4.Fill .env by benefiting your infura and metamask accounts.
+5.Installation is completed,you are now ready to run the scripts in this project👍
+
+
