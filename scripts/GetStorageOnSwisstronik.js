@@ -1,9 +1,12 @@
-require("dotenv").config();
-const ethers = require("ethers");
-let provider=null;
+const hre = require("hardhat");
+
+const { Bytecode } = require("hardhat/internal/hardhat-network/stack-traces/model");
 async function accessNumber(){
-    provider = new ethers.providers.JsonRpcProvider(`https://polygon-mumbai.infura.io/v3/${process.env.ApiKey}`)
-    let number=await provider.getStorageAt("0x1d7C29a84F3472A8335ef5715770E9bDAB584ff6",0);
-    console.log(number);
+    const contractAddress="0xa6cb0aE419915F1374f132B834a1E00ba94e412f"
+    provider = new ethers.providers.JsonRpcProvider("https://json-rpc.testnet.swisstronik.com/")
+    const [signer] = await hre.ethers.getSigners();
+
+    return ethers.utils.defaultAbiCoder.decode(['uint32'], await provider.getStorageAt(contractAddress,0));
 }
-accessNumber();
+const _runFunction=async()=>{console.log(await accessNumber())}
+_runFunction()
